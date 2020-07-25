@@ -11,10 +11,11 @@
 
     function processArgs(args, hasTarget){
         var result = {};
+        args = Array.prototype.slice.call(args);
         if(typeof args[args.length-1] === 'function'){
             result.callback = args[args.length-1];
+            args.splice(args.length-1, 1);
         }
-        args = Array.prototype.slice.call(args);
         result.name = args.shift();
         if(hasTarget) result.target = args.pop();
         result.conditions = args[0] || {};
@@ -53,10 +54,8 @@
 
     ExtendedEmitter.prototype.on = function(name){
         var args = processArgs(arguments);
-        //console.log('DEF', arguments, args, args.callback.toString())
         var proxyFn = function(data){
             if(meetsCriteria(name, data, args.name, args.conditions)){
-               //console.log('CB', args, args.callback.toString())
                 args.callback.apply(args.callback, arguments);
             }
         };
