@@ -1,5 +1,5 @@
 import sift from 'sift';
-import * as EventEmitter from 'wolfy87-eventemitter';
+import EventEmitter from 'wolfy87-eventemitter';
 
 function processArgs(args, hasTarget){
     var result = {};
