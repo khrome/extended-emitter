@@ -1,5 +1,13 @@
 import sift from 'sift';
-import EventEmitter from 'wolfy87-eventemitter';
+// of COURSE window-or-global is incompatible with browser native imports :P
+const globalContext = (
+    typeof process === 'object' && 
+    typeof process.versions === 'object' && 
+    typeof process.versions.node !== 'undefined'
+)?global:window;
+//import globalContext from 'window-or-global';
+import { EventEmitter } from 'node:events';
+//console.log(globalContext)
 
 function processArgs(args, hasTarget){
     var result = {};
