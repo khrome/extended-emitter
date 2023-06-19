@@ -111,5 +111,6 @@
         });
     };
 
+    ExtendedEmitter.default = ExtendedEmitter;
     return ExtendedEmitter;
 }));
