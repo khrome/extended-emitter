@@ -112,5 +112,6 @@
     };
 
     ExtendedEmitter.default = ExtendedEmitter;
+    ExtendedEmitter.Emitter = ExtendedEmitter;
     return ExtendedEmitter;
 }));
