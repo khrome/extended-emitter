@@ -14,11 +14,11 @@ import
 ------
 **CommonJS**
 ```javascript
-const Emitter = require('extended-emitter');
+const { Emitter } = require('extended-emitter');
 ```
-**ES6 imports(babel browser tools)**
+**ES6 imports**
 ```javascript
-import { Emitter } from 'extended-emitter/browser-es6';
+import { Emitter } from 'extended-emitter';
 ```
 
 optional criteria

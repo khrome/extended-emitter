@@ -1,6 +1,6 @@
-var should = require("should");
-var Emitter = require('./extended-emitter.js');
-var Promise = require('vow').Promise;
+import { chai } from '@environment-safe/chai';
+const should = chai.should();
+import { Emitter } from './extended-emitter.mjs';
 
 describe('Extended Emitter can', function(){
 	
