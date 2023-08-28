@@ -1,7 +1,7 @@
 {
     "name": "extended-emitter",
     "homepage": "https://github.com/khrome/extended-emitter",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "main": "extended-emitter.cjs",
     "module": "extended-emitter.mjs",
     "commonjs": "extended-emitter.cjs",

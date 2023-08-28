@@ -4,7 +4,7 @@ extended-emitter.js
 [![NPM version](https://img.shields.io/npm/v/extended-emitter.svg)](https://www.npmjs.com/package/extended-emitter)
 [![npm](https://img.shields.io/npm/dt/extended-emitter.svg)](https://www.npmjs.com/package/extended-emitter)
 
-[//]: # (Old travis link went here)
+[//]: # (Old travis link went here, replace with actions based build)
 
 Everything you expect from `require('events').EventEmitter` in both the browser and client, plus:
 - `criteria` : use a sift expression to work on a subset of the events
@@ -53,6 +53,12 @@ emitter.once('my_object_event', {
 
 and there's also the addition of a `when` function which can take ready-style functions, real promises or events, making it easy to delay or wait for a state, without resorting to chaining.
 
+### async
+```javascript
+await emitter.when([$(document).ready, 'my-init-event', 'my-load-event']);
+```
+
+### callbacks
 ```javascript
 emitter.when([$(document).ready, 'my-init-event', 'my-load-event'], function(){
 	//do stuff
@@ -72,7 +78,7 @@ emitter.onto(MyObject);
 or in the constructor:
 
 ```javascript
-emitter.onto(this);
+(new Emitter()).onto(this);
 ```
 
 Testing

@@ -90,7 +90,17 @@ ExtendedEmitter.prototype.once = function(name){
     return proxyFn;
 }
 
-ExtendedEmitter.prototype.when = function(events, callback){
+ExtendedEmitter.prototype.when = function(events, cb){
+    let callback = cb;
+    let result = null;
+    if(!callback){
+        result = new Promise((resolve, reject)=>{
+            callback = (err, result)=>{
+                if(err) return reject(err);
+                resolve(result);
+            }
+        });
+    }
     var count = 0;
     var returns = [];
     var ob = this;
@@ -110,4 +120,5 @@ ExtendedEmitter.prototype.when = function(events, callback){
         if(typeof event == 'function') event(respond);
         else return ob.emitter.once(event, respond);
     });
+    return result;
 };

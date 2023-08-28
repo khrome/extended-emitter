@@ -80,6 +80,19 @@ describe('Extended Emitter can', function(){
 			emitter.emit('other-event');
 		});
 		
+		it('subscribes via old-style ready function + events using promise', async function(){
+			var ready = function(cb){
+				setTimeout(function(){
+					cb();
+				}, 30);
+			};
+			setTimeout(function(){
+				emitter.emit('dummy-event');
+				emitter.emit('other-event');
+			}, 10);
+			await emitter.when([ready, 'dummy-event', 'other-event']);
+		});
+		
 		it('subscribes via promise + events', function(done){
 			var promise = new Promise(function(resolve, reject, notify) {
 				setTimeout(function(){
