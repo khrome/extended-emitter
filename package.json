@@ -1,7 +1,7 @@
 {
     "name": "extended-emitter",
     "homepage": "https://github.com/khrome/extended-emitter",
-    "version": "1.5.1",
+    "version": "1.6.0",
     "main": "extended-emitter.cjs",
     "module": "extended-emitter.mjs",
     "commonjs": "extended-emitter.cjs",
@@ -19,7 +19,7 @@
             "require": "./extended-emitter.cjs"
         }
     },
-    "description": "An emitter with expanded utility, UMD with dependencies for node and the browser",
+    "description": "An emitter with expanded utility for node and the browser",
     "keywords": [
         "emitter",
         "query",
@@ -36,8 +36,7 @@
         "url": "git@github.com:khrome/extended-emitter.git"
     },
     "dependencies": {
-        "sift": "*",
-        "wolfy87-eventemitter": "*"
+        "sift": "*"
     },
     "devDependencies": {
         "@environment-safe/chai": "^0.1.0",
